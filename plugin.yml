@@ -1,0 +1,11 @@
+main: com.huminecraft.huminerespawn.HumineRespawn
+name: HumineRespawn
+version: "1.0.0"
+description: HumineRespawn plugin
+author: SDAChess
+commands:
+  deathroom:
+    description: Commande principale du plugin.
+    permission: HumineRespawn.admin
+    permission-message: Vous n'avez pas la permission d'utiliser cette commande!
+    usage: "/<command>"
