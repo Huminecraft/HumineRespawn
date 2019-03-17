@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 //import com.huminecraft.huminerespawn.HumineRespawn;
 
 public class CommandDeathroom implements CommandExecutor {
-    
+
     private static boolean ENABLED = true;
 //    private static String world = HumineRespawn.getInstance().getConfig().getString("world");
 //    private static double x = HumineRespawn.getInstance().getConfig().getDouble("x");
@@ -27,49 +27,44 @@ public class CommandDeathroom implements CommandExecutor {
 	    Player p = (Player) sender;
 	    if (p.hasPermission("HumineRespawn.admin")) {
 		if (args[0].equalsIgnoreCase("set")) {
-		    this.setLocation(p.getLocation());
-/**		    String world = loc.getWorld().getName();
-		    double x = loc.getX();
-		    double y = loc.getY();
-		    double z = loc.getZ();
-		    HumineRespawn.getInstance().getCustomConfig().set("world", world);
-		    HumineRespawn.getInstance().getCustomConfig().set("x", x);
-		    HumineRespawn.getInstance().getCustomConfig().set("y", y);
-		    HumineRespawn.getInstance().getCustomConfig().set("z", z);
-		    try {
-			HumineRespawn.getInstance().getCustomConfig().save("spawn.yml");
-		    } catch (IOException e) {
-			e.printStackTrace();
-		    } **/
+		    Location location = p.getLocation();
+		    this.setLocation(location);
+		    /**
+		     * String world = loc.getWorld().getName(); double x = loc.getX(); double y =
+		     * loc.getY(); double z = loc.getZ();
+		     * HumineRespawn.getInstance().getCustomConfig().set("world", world);
+		     * HumineRespawn.getInstance().getCustomConfig().set("x", x);
+		     * HumineRespawn.getInstance().getCustomConfig().set("y", y);
+		     * HumineRespawn.getInstance().getCustomConfig().set("z", z); try {
+		     * HumineRespawn.getInstance().getCustomConfig().save("spawn.yml"); } catch
+		     * (IOException e) { e.printStackTrace(); }
+		     **/
 		    p.sendMessage("La localisation de la Deathroom a bien été actualisée");
-		} 
-		
-		else if (args[0].equalsIgnoreCase("enable") || args[0 ].equalsIgnoreCase("disable")) {
-		    if ((CommandDeathroom.isENABLED() && args[0].equalsIgnoreCase("enabled"))
-			    || (CommandDeathroom.isENABLED() == false && args[0] == "disabled")) {
-			p.sendMessage("La deathroom est déjà " + args[0]);
-		    } else if (args[0].equalsIgnoreCase("enabled")) {
-			this.setEnabled(true);
-		    } else if (args[0].equalsIgnoreCase("disabled")) {
-			this.setEnabled(false);
-		    }    
-		} 
-		
-		else if (args[0].equalsIgnoreCase("time") && !args[1].equalsIgnoreCase("")) {
-		    try {
-			timer = Integer.parseInt(args[1]);
-		    } catch (NumberFormatException e) {
-			p.sendMessage(args[1] + " n'est pas un nombre valide");
-		    }
+		    System.out.println("La localisation de la deathroom a été mise à jour : " + "X = "
+			    + location.getBlockX() + "Y = " + location.getBlockY() + "Z = " + location.getBlockZ());
 		}
-		
+
+		/*
+		 * else if (args[0].equalsIgnoreCase("enable") ||
+		 * args[0].equalsIgnoreCase("disable")) { if ((CommandDeathroom.isENABLED() &&
+		 * args[0].equalsIgnoreCase("enabled")) || (!CommandDeathroom.isENABLED() &&
+		 * args[0] == "disabled")) { p.sendMessage("La deathroom est déjà " + args[0]);
+		 * } else if (args[0].equalsIgnoreCase("enabled")) { this.setEnabled(true); }
+		 * else if (args[0].equalsIgnoreCase("disabled")) { this.setEnabled(false); } }
+		 */
+
+		/*
+		 * else if (args[0].equalsIgnoreCase("time") && !args[1].equalsIgnoreCase("")) {
+		 * try { timer = Integer.parseInt(args[1]); } catch (NumberFormatException e) {
+		 * p.sendMessage(args[1] + " n'est pas un nombre valide"); } }
+		 */
+
 		else {
 		    p.sendMessage("Commande inconnue, utilisez /deathroom help pour en savoir plus.");
 		}
 
-	    } 
-	    
-	    
+	    }
+
 	    else {
 		p.sendMessage("Vous n'avez pas la permission pour utiliser cette commande.");
 	    }
