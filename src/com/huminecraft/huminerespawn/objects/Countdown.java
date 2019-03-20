@@ -10,6 +10,10 @@ import com.huminecraft.huminerespawn.commands.CommandDeathroom;
 public class Countdown {
 
     private Player p;
+    public static Countdown instance;
+    
+    public Countdown() {
+    }
 
     public void setPlayer(Player p) {
 	this.p = p;
@@ -19,16 +23,16 @@ public class Countdown {
 	return p;
     }
 
-    public static void start() {
+    public void start() {
 	Timer countdown = new Timer(HumineRespawn.getInstance(), CommandDeathroom.getDeathroomTimer(),
 		new TimerFinishListener() {
-
 		    @Override
 		    public void execute() {
-			
+			getPlayer().teleport(getPlayer().getBedSpawnLocation());
 		    }
 		}, true);
 	countdown.start();
+	
     }
 
 }

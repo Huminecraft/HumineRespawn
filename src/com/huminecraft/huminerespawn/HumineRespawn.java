@@ -21,7 +21,7 @@ public class HumineRespawn extends JavaPlugin {
     private final String VERSION = "1.0.0";
 
     public static HumineRespawn getInstance() {
-	return instance;
+	return HumineRespawn.instance;
     }
 
     public void onEnable() {
@@ -29,7 +29,7 @@ public class HumineRespawn extends JavaPlugin {
 	getCommand("deathroom").setExecutor(new CommandDeathroom());
 	getServer().getPluginManager().registerEvents(new DeathListener(), this);
 	getServer().getPluginManager().registerEvents(new RespawnListener(), this);
-
+	instance = this;
 	// createCustomConfig();
 
     }

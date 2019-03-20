@@ -10,14 +10,16 @@ import com.huminecraft.huminerespawn.objects.Countdown;
 
 public class RespawnListener implements Listener {
     
+    
+    Countdown countdown = new Countdown();
     @EventHandler
     public void onRespawn(PlayerRespawnEvent e) {
 	Player player = e.getPlayer();
 	if (player instanceof Player) /** && player.getKiller() != null)**/ {
 	    e.setRespawnLocation(CommandDeathroom.getDeathroomLocation());
 	    System.out.println("Casted Respawn");
-	    Countdown.setPlayer(player);
-	    Countdown.start();
+	    countdown.setPlayer(player);
+	    countdown.start();
 	} else {
 	    return;
 	}
