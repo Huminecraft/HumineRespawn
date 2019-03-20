@@ -18,7 +18,7 @@ public class HumineRespawn extends JavaPlugin {
     // private File customConfigFile;
     private FileConfiguration customConfig;
     public static HumineRespawn instance;
-    private static final String VERSION = "1.0.0";
+    private final String VERSION = "1.0.0";
 
     public static HumineRespawn getInstance() {
 	return instance;

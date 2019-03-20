@@ -20,7 +20,7 @@ public class Countdown {
     }
 
     public static void start() {
-	Timer countdown = new Timer(HumineRespawn.getInstance(), CommandDeathroom.getTimer(),
+	Timer countdown = new Timer(HumineRespawn.getInstance(), CommandDeathroom.deathroom.getDeathroom().getTimer(),
 		new TimerFinishListener() {
 
 		    @Override

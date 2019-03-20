@@ -9,20 +9,19 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 
 public class DeathListener implements Listener {
 
-    private static Location deathLocation;
+    private Location deathLocation;
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent e) {
 	Player player = e.getEntity();
 	this.setDeathLocation(player);
-	
     }
 
     private void setDeathLocation(Player player) {
 	deathLocation = player.getLocation();
     }
 
-    public static Location getDeathLocation() {
+    public Location getDeathLocation() {
 	return deathLocation;
     }
 }
