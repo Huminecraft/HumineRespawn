@@ -62,6 +62,13 @@ public class CommandDeathroom implements CommandExecutor {
 	return true;
     }
 
+    public static Location getDeathroomLocation() {
+	return deathroom.getRoomLocation();
+    }
+    public static int getDeathroomTimer() {
+	return deathroom.getTimer();
+    }
+
 
 
 }

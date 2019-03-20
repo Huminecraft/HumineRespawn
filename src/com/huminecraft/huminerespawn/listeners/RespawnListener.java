@@ -14,7 +14,7 @@ public class RespawnListener implements Listener {
     public void onRespawn(PlayerRespawnEvent e) {
 	Player player = e.getPlayer();
 	if (player instanceof Player) /** && player.getKiller() != null)**/ {
-	    e.setRespawnLocation(CommandDeathroom.deathroom.getDeathroom().getRoomLocation());
+	    e.setRespawnLocation(CommandDeathroom.getDeathroomLocation());
 	    System.out.println("Casted Respawn");
 	    Countdown.setPlayer(player);
 	    Countdown.start();

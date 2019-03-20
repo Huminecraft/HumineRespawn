@@ -9,23 +9,23 @@ import com.huminecraft.huminerespawn.commands.CommandDeathroom;
 
 public class Countdown {
 
-    private static Player p;
+    private Player p;
 
-    public static void setPlayer(Player p) {
-	Countdown.p = p;
+    public void setPlayer(Player p) {
+	this.p = p;
     }
 
-    public static Player getPlayer() {
+    public Player getPlayer() {
 	return p;
     }
 
     public static void start() {
-	Timer countdown = new Timer(HumineRespawn.getInstance(), CommandDeathroom.deathroom.getDeathroom().getTimer(),
+	Timer countdown = new Timer(HumineRespawn.getInstance(), CommandDeathroom.getDeathroomTimer(),
 		new TimerFinishListener() {
 
 		    @Override
 		    public void execute() {
-			Countdown.getPlayer();
+			
 		    }
 		}, true);
 	countdown.start();
