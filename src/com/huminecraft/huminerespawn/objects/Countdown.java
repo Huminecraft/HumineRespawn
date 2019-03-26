@@ -1,6 +1,7 @@
 package com.huminecraft.huminerespawn.objects;
 
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import com.aypi.utils.Timer;
 import com.aypi.utils.inter.TimerFinishListener;
@@ -32,7 +33,20 @@ public class Countdown {
 		    }
 		}, true);
 	countdown.start();
-	
+	new BukkitRunnable()
+        {
+            int countdown = CommandDeathroom.getDeathroomTimer();
+            public void run()
+            {
+                p.setLevel(countdown);
+                if (countdown == 0) {
+            		this.cancel();
+                }
+                countdown--;
+            }
+
+
+        }.runTaskTimer(HumineRespawn.getInstance(), 20, 20);
     }
 
 }
