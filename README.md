@@ -13,6 +13,6 @@ Lorsqu'un joueur meurt pendant un fight, il est téléporté dans une pièce ou 
 * ``` /deathroom status ``` Permet de savoir si la deathroom est activée ou non.
 
 ## TO-DO LIST
-* Fixer le bug de configuration au démarrage
-* Fixer le problème de Timer quand plusieurs joueurs se connectent (une instance de Timer pour chaque joueur?)
+* Fixer le bug de configuration au démarrage :heavy_check_mark:
+* Fixer le problème de Timer quand plusieurs joueurs se connectent (une instance de Timer pour chaque joueur?) :heavy_check_mark:
 * Terminer le projet final.
