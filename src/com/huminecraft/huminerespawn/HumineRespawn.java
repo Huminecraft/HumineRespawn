@@ -11,7 +11,7 @@ import com.huminecraft.huminerespawn.listeners.RespawnListener;
 public class HumineRespawn extends JavaPlugin {
 
     public static HumineRespawn instance;
-    private final String VERSION = "1.0.0";
+    private final String VERSION = "1.0.1";
 
     public static HumineRespawn getInstance() {
 	return HumineRespawn.instance;
